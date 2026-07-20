@@ -28,3 +28,5 @@ HelmetViolation/FinalDataset/*
 # One-off helper scripts that are not part of the project code
 check_dataset.py
 show_background.py
+
+Dataset.zip
