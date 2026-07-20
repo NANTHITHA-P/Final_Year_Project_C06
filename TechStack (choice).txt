@@ -1,0 +1,38 @@
+YOLOv11s vs YOLOv11n  Difference in Helmet detection in Traffic:
++--------------------------+----------------------------------------------+------------------------------------------------------+
+| Feature                  | YOLOv11n (Nano)                              | YOLOv11s (Small)                                     |
++--------------------------+----------------------------------------------+------------------------------------------------------+
+| Primary Advantage        | Maximum speed / lowest compute               | Best balance of speed and detection accuracy         |
++--------------------------+----------------------------------------------+------------------------------------------------------+
+| Model Size / Params      | ~2.6 M parameters                            | ~9.4 M parameters                                    |
++--------------------------+----------------------------------------------+------------------------------------------------------+
+| Tracking ID Continuity   | Moderate (prone to ID switching if the       | High (maintains tracking IDs reliably through minor  |
+|                          | object is briefly occluded)                  | obstructions)                                        |
++--------------------------+----------------------------------------------+------------------------------------------------------+
+| Traffic Suitability      | Great for constrained edge devices or        | Ideal for busy streets, multi-rider scenes, and      |
+|                          | simple uncrowded roads                       | varied lighting                                      |
++--------------------------+----------------------------------------------+------------------------------------------------------+
+
+
+So YOLOv11s is best between YOLOv11n because :
+	ByteTrack relies heavily on the bounding box accuracy between frames. YOLOv11s produces tighter, more consistent bounding boxes, meaning ByteTrack loses the target less often (preventing the motorcycle rider's ID from resetting)
+
+
+
+YOLOv11s vs Faster R-CNN:
++---------------------+-----------------------------------------------------------+-------------------------------------------------------------+
+| Feature             | YOLOv11s                                                  | Faster R-CNN (ResNet-50)                                    |
++---------------------+-----------------------------------------------------------+-------------------------------------------------------------+
+| Architecture        | Single-stage (predicts boxes and classes in one pass)     | Two-stage (Region Proposal Network + detector network)      |
++---------------------+-----------------------------------------------------------+-------------------------------------------------------------+
+| Speed / FPS         | Very High (often 80+ FPS on modern GPUs)                  | Low (typically 15–25 FPS, causing tracking lag)             |
++---------------------+-----------------------------------------------------------+-------------------------------------------------------------+
+| ByteTrack Synergy   | Excellent (fast frame processing ensures tiny gaps        | Poor (slow inference causes large jumps between frames,     |
+|                     | between object movements)                                 | leading to ID swaps)                                        |
++---------------------+-----------------------------------------------------------+-------------------------------------------------------------+
+| Deployment          | Easy optimization for edge devices and embedded systems   | Heavy, resource-intensive, and hard to deploy at scale      |
++---------------------+-----------------------------------------------------------+-------------------------------------------------------------+
+
+
+so YOLOv11s is better on compared to Faster R-CNN because:
+	YOLOv11s is faster and integrates good with ByteTrack.
