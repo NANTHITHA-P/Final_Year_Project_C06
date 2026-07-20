@@ -1,0 +1,9 @@
+path: E:\Final_Year_Project_C06\HelmetViolation\FinalDataset
+train: train/images
+val: valid/images
+test: test/images
+
+nc: 2
+names:
+  0: With Helmet
+  1: Without Helmet

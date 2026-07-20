@@ -1,0 +1,30 @@
+# Python environment and caches
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# VS Code and local IDE settings
+.vscode/
+.idea/
+
+# Generated training and inference outputs
+runs/
+HelmetViolation/runs/
+HelmetViolation/outputs/
+
+# Large or reproducible assets
+HelmetViolation/yolo11s.pt
+HelmetViolation/videos/
+Base Paper/
+
+# Dataset contents are large; keep only the dataset config
+HelmetViolation/FinalDataset/*
+!HelmetViolation/FinalDataset/data.yaml
+
+# One-off helper scripts that are not part of the project code
+check_dataset.py
+show_background.py
