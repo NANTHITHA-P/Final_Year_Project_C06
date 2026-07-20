@@ -1,4 +1,4 @@
-# Real-Time Helmet and Triple Riding Violation Detection Using YOLOv8 and ByteTrack for Smart Traffic Surveillance
+# Real-Time Helmet and Triple Riding Violation Detection Using YOLOv11s and ByteTrack for Smart Traffic Surveillance
 
 This project is a smart traffic surveillance system designed to detect two-wheeler safety and traffic violations in real time. It identifies motorcycles and riders from traffic video, detects helmet and no-helmet cases, and recognizes triple riding violations.
 
